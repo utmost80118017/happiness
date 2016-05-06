@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+.pic{
+	font-size: 0;
+}
+.pic img{
+	width: 100%;
+}
+
+.text{
+	position: relative;
+	padding: 30px 0;
+	text-align: center;
+}
+.row p{
+	color: rgb(243,152,0);
+	font-size: 18px;
+}
+.row span{
+	display: block;
+	margin: 10px auto;
+	width: 50%;
+	color: #FFF;
+	text-align: center;
+}
+.row .gray{
+	color: #888;
+	font-size: 10px;
+}
+
+
+#t1{
+	background: url(../../img/2/plan/b2.png) right 5% bottom 10px no-repeat , #111;
+}
+#p1{
+	position: absolute;
+	bottom: 0; left: 30px;
+}
+
+#t2{
+	background: url(../../img/2/plan/b3.png) left 5% bottom no-repeat , #555;
+}
+#p2{
+	position: absolute;
+	bottom: 0; right: 30px;
+}
+
+#t3{
+	background: url(../../img/2/plan/b6.png) right 5% bottom no-repeat , #FFF;
+}
+#t3 span , #t4 span{
+	color: #000;
+}
+#p3{
+	position: absolute;
+	bottom: 10px; left: 20px;
+}
+
+#t4{
+	background: url(../../img/2/plan/b6.png) left 5% bottom 30px no-repeat , #FFF;
+}
+#p4{
+	position: absolute;
+	bottom: 10px; right: 30px;
+}
+
+
+.flexslider{
+	margin: 0;
+	border: none;
+}
+.flex-direction-nav{
+	display: none;
+}
+.flex-control-nav{
+	bottom: 10px;
+}
+.flex-control-paging li a{
+	background: #FFF;
+	width: 9px; height: 9px;
+	border-radius: 7px;
+	border: 2px solid #FFF;
+}
+.flex-control-paging li a:hover{
+	opacity: 0.5;
+	background-color: #ec6941;
+}
+.flex-control-paging li a.flex-active{
+	background-color: #ec6941;
+	width: 9px; height: 9px;
+	border-radius: 7px;
+	border: 2px solid #FFF;
+}
+
+
+@media (max-width: 768px){
+
+.row span{
+	width: 60%;
+}
+#t2{
+	background: #555;
+}
+#p1 , #p2 , #p3 , #p4{
+	display: none;
+}
+
+}

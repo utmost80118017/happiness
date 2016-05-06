@@ -1,0 +1,86 @@
+<section id="ad">
+    <div class="clearfix">
+        <div class="L60">
+            <div class="flexslider fs2">
+                <ul class="slides">
+                  <?php foreach($ad_15 as $ad15): ?>
+                    <?php if(  !empty($ad15->image) AND File::exists( public_path().$ad15->image)  ): ?>
+                      <li><a href="<?php echo $ad15->url; ?>"   target="_new" >
+                            <img src="/public<?php echo $ad15->image; ?>">
+                          </a>
+                      </li>
+                    <?php else: ?>
+                    <li>
+                          <img src="/images/557x320.jpg">
+                    </li>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="L20">
+            <div class="flexslider fs2">
+                <ul class="slides">
+                    <?php foreach($ad_16 as $ad16): ?>
+                          <?php if(  !empty($ad16->image) AND File::exists( public_path().$ad16->image)  ): ?>
+                          <li><a href="<?php echo $ad16->url; ?>"   target="_new" ><img src="/public<?php echo $ad16->image; ?>"></a></li>
+                          <?php else: ?>
+                          <li>
+                              <img src="/images/173x144.jpg">
+                          </li>
+                          <?php endif; ?>
+                    <?php endforeach; ?>
+
+                </ul>
+            </div>
+        </div>
+        <div class="L20">
+            <div class="flexslider fs2">
+                <ul class="slides">
+                    <?php foreach($ad_17 as $ad17): ?>
+
+                      <?php if(  !empty($ad17->image) AND File::exists( public_path().$ad17->image)  ): ?>
+                        <li><a href="<?php echo $ad17->url; ?>"   target="_new" ><img src="/public<?php echo $ad17->image; ?>"></a></li>
+                      <?php else: ?>
+                        <li><img src="/images/173x144.jpg"></li>
+                      <?php endif; ?>
+
+                    <?php endforeach; ?>
+
+                </ul>
+            </div>
+        </div>
+        <div class="L20">
+            <div class="flexslider fs2">
+                <ul class="slides">
+                    <?php foreach($ad_18 as $ad18): ?>
+                        <?php if(  !empty($ad18->image) AND File::exists( public_path().$ad18->image)  ): ?>
+                          <li><a href="<?php echo $ad18->url; ?>"  target="_new" ><img src="/public<?php echo $ad18->image; ?>"></a></li>
+                        <?php else: ?>
+                          <li><img src="/images/173x144.jpg"></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+        <div class="L20">
+            <div class="flexslider fs2">
+                <ul class="slides">
+                    <?php foreach($ad_19 as $ad19): ?>
+                          <?php if(  !empty($ad19->image) AND File::exists( public_path().$ad19->image)  ): ?>
+                            <li>
+                                <a href="<?php echo $ad19->url; ?>"  target="_new" >
+                                  <img src="/public<?php echo $ad19->image; ?>">
+                                </a>
+                            </li>
+                          <?php else: ?>
+                            <li><img src="/images/173x144.jpg"></li>
+                          <?php endif; ?>
+                    <?php endforeach; ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

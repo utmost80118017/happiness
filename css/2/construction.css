@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+#main{
+	background: url(../../img/2/cons/b1.png) left no-repeat , rgb(27,27,27);
+	background-size: 86px 100%;
+}
+#list{
+	overflow: auto;
+	background: url(../../img/2/cons/b2.png) left bottom no-repeat;
+	background-size: 1000px;
+	padding-top: 5%;
+}
+.title{
+	margin: 0 auto;
+	width: 400px;
+	border-bottom: 1px solid #777;
+	padding: 10px 0;
+}
+.title p{
+	background-color: rgb(243,152,0);
+	width: 80px;
+	padding: 10px 30px;
+	color: #FFF;
+	text-align: center;
+}
+.title span{
+	color: #777;
+	font-size: 10px;
+}
+
+#list ul{
+	list-style-type: none;
+
+	margin: 0 auto;
+	width: 400px;
+	color: #FFF;
+}
+#list li{
+	margin: 20px 0;
+	border-bottom: 1px solid #777;
+	padding: 10px 0;
+}
+#list li > *{
+	float: left;
+}
+
+#list li > img{
+	width: 110px;
+}
+
+#list li p{
+	margin: 0 15px;
+	width: 240px;
+}
+#list li span{
+	display: inline-block;
+	margin: 2px 0;
+}
+#list li .more{
+	display: inline-block;
+	background: url(../../img/2/cons/more.png) no-repeat;
+	width: 56px; height: 56px;
+}
+#list li .more:hover{
+	background: url(../../img/2/cons/more2.png) no-repeat;
+}
+
+#list > p{
+	margin: 30px 0;
+	text-align: center;
+}
+#list > p span{
+	display: inline-block;
+	background-color: #FFF;
+	margin: 0 5px;
+	width: 22px; height: 17px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+#list > p .thispage{
+	background-color: rgb(243,152,0);
+}
+
+
+@media (max-width: 768px){
+
+#main{
+	background: rgb(27,27,27);
+}
+#list li > img{
+	width: 100%;
+}
+
+.title , #list ul{
+	margin: 0 auto;
+	width: 80%;
+}
+
+#list li p , #list li .more{
+	margin: 10px 0;
+	max-width: 100%;
+}
+
+}

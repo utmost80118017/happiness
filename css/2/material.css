@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+.row{
+	position: relative;
+}
+
+.pic{
+	float: right;
+	position: relative;
+	margin-left: 25%;
+	width: 75%;
+	font-size: 0;
+}
+.pic img{
+	width: 100%;
+}
+
+.text{
+	position: absolute;
+	float: right;
+	width: 20%; height: 100%;
+	padding: 0 3%;
+}
+.text p{
+	color: #ec6941;
+	font-size: 18px;
+}
+.text span{
+	display: block;
+	margin: 10px 0;
+	color: #FFF;
+	text-align: justify;
+}
+.text .gray{
+	color: #888;
+	font-size: 10px;
+}
+
+.center{
+	position: relative;
+	height: 100%;
+}
+.center section{
+	position: absolute;
+	top: 40%;
+	transform: translateY(-40%);
+	-webkit-transform: translateY(-40%);
+}
+
+#t1{
+	background: url(../../img/2/mat/b2.png) right bottom no-repeat , #444;
+	background-size: 30% , 100%;
+}
+#p1{
+	clear: both;
+	position: relative;
+	background-color: rgb(149,149,149);
+	height: 50px;
+}
+#p1 img{
+	position: absolute;
+	top: -30px; left: 50px;
+}
+
+#t2{
+	background: url(../../img/2/mat/b3.png) left bottom no-repeat , #444;
+	background-size: 30% , 100%;
+}
+#p2{
+	clear: both;
+	position: relative;
+	background-color: rgb(243,152,0);
+	height: 50px;
+}
+#p2 img{
+	position: absolute;
+	top: -70px; left: 130px;
+}
+
+#t3{
+	background: url(../../img/2/mat/b5.png) left 60% top no-repeat , url(../../img/2/mat/b6.png) right top no-repeat , #444;
+	background-size: 20% , 30% , 100%;
+}
+#p3{
+	background-color: rgb(27,27,27);
+	height: 50px;
+}
+
+#t4{
+	background: url(../../img/2/mat/b8.png) right bottom no-repeat , #444;
+	background-size: 40% , 100%;
+}
+#p4{
+	clear: both;
+	position: relative;
+	background-color: #ec6941;
+	height: 50px;
+}
+#p4 img{
+	position: absolute;
+	top: -70px; left: 50px;
+}
+
+#t5{
+	background: url(../../img/2/mat/b9.png) left top no-repeat , url(../../img/2/mat/b10.png) left 60% bottom 10px no-repeat , #444;
+	background-size: 40% , 20% , 100%;
+}
+#p5{
+	clear: both;
+	position: relative;
+	background: url(../../img/2/mat/grass.jpg) no-repeat;
+	background-size: cover;
+	height: 50px;
+}
+#p5 img{
+	position: absolute;
+	top: -70px; left: 50px;
+}
+
+
+@media (max-width: 768px){
+
+.pic{
+	width: 100%;
+}
+.text{
+	position: relative;
+	width: 80%;
+	padding: 80px 10%;
+}
+
+.center section{
+	position: static;
+	top: 0%;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+}
+
+#t1 , #t2{
+	background-size: 80px , 100%;
+}
+#t3{
+	background-size: 50px , 100px , 100%;
+}
+#t4{
+	background-size: 120px , 100%;
+}
+#t5{
+	background-size: 120px , 50px , 100%;
+}
+
+}

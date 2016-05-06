@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+#nav2 aside{
+	background: url(../../img/1/intro/main.jpg) left bottom no-repeat;
+	background-size: cover;
+	padding: 50px 0 80px;
+	text-align: center;
+}
+
+.people{
+	float: left;
+	width: 25%;
+}
+.people > div:first-child{
+	font-size: 0;
+}
+.people > div:first-child img{
+	width: 100%;
+}
+.name{
+	position: relative;
+	background: url(../../img/1/intro/b0.jpg) no-repeat;
+	background-size: cover;
+	padding: 30px 0 40px;
+	color: #FFF;
+	text-align: center;
+}
+.name .b5{
+	position: absolute;
+	top: -12px; left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+.name p{
+	background-color: #8c7a28;
+	margin: 0 auto;
+	width: 65px;
+	padding: 3px 10px;
+}
+.name span{
+	display: block;
+	margin: 10px 0;
+}
+.name img{
+	float: right;
+	margin-right: 10px;
+}
+
+#team > p{
+	clear: both;
+	background-color: #8c7a28;
+	height: 40px;
+}
+
+.intro{
+	position: relative;
+}
+.intro .left{
+	float: left;
+	position: relative;
+	width: 65%;
+	font-size: 0;
+}
+.intro .right{
+	float: right;
+	position: relative;
+	width: 65%;
+	font-size: 0;
+}
+.intro .left img , .intro .right img{
+	width: 100%;
+}
+.intro .left2{
+	float: left;
+	position: absolute;
+	left: 65%;
+	width: 35%; height: 100%;
+	color: #FFF;
+	line-height: 28px;
+}
+.intro .right2{
+	float: right;
+	position: absolute;
+	right: 65%;
+	width: 35%; height: 100%;
+	color: #FFF;
+	line-height: 28px;
+}
+.intro .left2 > div , .intro .right2 > div{
+	position: relative;
+	height: 100%;
+}
+.intro .content{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	width: 200px;
+	text-align: justify;
+}
+.intro .content span{
+	color: #8c7a28;
+	font-size: 12px;
+}
+
+.b1{
+	background: url(../../img/1/intro/b1.jpg) no-repeat;
+	background-size: cover;
+}
+.b2{
+	background: url(../../img/1/intro/b2.jpg) no-repeat;
+	background-size: cover;
+}
+.b3{
+	background: url(../../img/1/intro/b3.jpg) no-repeat;
+	background-size: cover;
+}
+.b4{
+	background: url(../../img/1/intro/b4.jpg) no-repeat;
+	background-size: cover;
+}
+
+.intro .left .real{
+	left: 15px; right: inherit;
+}
+
+
+@media (max-width: 768px){
+
+.people{
+	width: 50%;
+}
+
+.intro .left , .intro .left2 , .intro .right , .intro .right2{
+	width: 100%;
+}
+.intro .left2 , .intro .right2 , .intro .content{
+	position: static;
+	transform: translate(0,0);
+	-webkit-transform: translate(0,0);
+}
+.intro .content{
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.intro .left .real{
+	left: inherit; right: 15px;
+}
+
+}

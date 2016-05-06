@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+#nav2 aside{
+	background: url(../../img/1/inter/main.jpg) left bottom no-repeat;
+	background-size: cover;
+	padding: 50px 0 80px;
+	text-align: center;
+}
+
+#b0{
+	overflow: auto;
+	background: url(../../img/1/inter/b0.jpg) left no-repeat;
+	background-size: cover;
+	padding: 20px 0;
+	color: #FFF;
+	text-align: center;
+}
+#b0 span{
+	display: block;
+	margin: 10px 0;
+}
+
+.pic{
+	position: relative;
+	font-size: 0;
+}
+.pic > div{
+	position: relative;
+}
+.pic img{
+	width: 100%;
+}
+.content{
+	position: absolute; z-index: 1;
+	top: 80%; left: 50%;
+	transform: translate(-50% , -80%);
+	-webkit-transform: translate(-50% , -80%);
+
+	background-color: rgba(0,0,0,0.6);
+	width: 230px;
+	padding: 20px 0;	
+	text-align: center;
+}
+.content p{
+	margin-bottom: 10px; 
+	color: #FFF;
+	font-size: 16px;
+}
+.content span{
+	color: #8c7a28;
+	font-size: 12px;
+}
+
+#b1{
+	position: static;
+	background: url(../../img/1/inter/b1.jpg) left no-repeat;
+	background-size: cover;
+	height: 50px;
+}
+#b2{
+	position: static;
+	background: url(../../img/1/inter/b2.jpg) left no-repeat;
+	background-size: cover;
+	height: 50px;
+}
+#b3{
+	position: static;
+	background: url(../../img/1/inter/b3.jpg) left no-repeat;
+	background-size: cover;
+	height: 50px;
+}
+#b4{
+	position: static;
+	background: url(../../img/1/inter/b4.jpg) left no-repeat;
+	background-size: cover;
+	height: 50px;
+}
+#b5{
+	position: static;
+	background: url(../../img/1/inter/b1.jpg) left no-repeat;
+	background-size: cover;
+	height: 0px;
+}
+#b5 .content{
+	top: 92%; left: 50%;
+	transform: translate(-50% , -92%);
+	-webkit-transform: translate(-50% , -92%);
+}
+
+#b6{
+	overflow: auto;
+	background: url(../../img/1/inter/b6.jpg) right no-repeat;
+	background-size: cover;
+	padding: 20px 0;
+	color: #FFF;
+	text-align: center;
+}
+#b6 span{
+	display: block;
+	margin: 10px 0;
+}
+
+
+.intro{
+	position: relative;
+}
+.intro .left{
+	float: left;
+	position: relative;
+	width: 65%;
+	font-size: 0;
+}
+.intro .right{
+	float: right;
+	position: relative;
+	width: 65%;
+	font-size: 0;
+}
+.intro .left img , .intro .right img{
+	width: 100%;
+}
+.intro .left2{
+	float: left;
+	position: absolute;
+	left: 65%;
+	width: 35%; height: 100%;
+	color: #FFF;
+	line-height: 28px;
+}
+.intro .right2{
+	float: right;
+	position: absolute;
+	right: 65%;
+	width: 35%; height: 100%;
+	color: #FFF;
+	line-height: 28px;
+}
+.intro .left2 > div , .intro .right2 > div{
+	position: relative;
+	height: 100%;
+}
+.intro .content{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+
+	background: none;
+	width: 200px;
+	text-align: justify;
+}
+.intro .content p{
+	margin: 0;	
+}
+.intro .content .square span:first-child{
+	display: inline-block;
+	width: 100px;
+	padding: 0;
+	background-color: #8c7a28;
+	color: #FFF;
+	font-size: 16px;
+	text-align: center;
+}
+.intro .content .square span:last-child{
+	display: inline-block;
+	background-color: #000;
+	width: 80px;
+	padding: 0;
+	color: #FFF;
+	font-size: 16px;
+	text-align: center;
+}
+.intro .content span{
+	padding: 5px 0;
+	color: #8c7a28;
+	font-size: 12px;
+}
+.intro .left .real{
+	left: 15px; right: inherit;
+}
+.b7{
+	background: url(../../img/1/inter/b7.jpg) left no-repeat;
+	background-size: cover;
+}
+
+
+@media (max-width: 768px){
+
+.intro .left , .intro .left2 , .intro .right , .intro .right2{
+	width: 100%;
+}
+.intro .left2 , .intro .right2 , .intro .content{
+	position: static;
+	transform: translate(0,0);
+	-webkit-transform: translate(0,0);
+}
+.intro .content{
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+}
+
+@media (max-width: 480px){
+
+.content , #b5 .content{
+	position: relative;
+	top: 0; left: 0;
+	transform: translate(0,0);
+	-webkit-transform: translate(0,0);
+	margin: 0 auto;
+}
+#b1 , #b2 , #b3 , #b4 , #b5{
+	height: inherit;
+	padding: 20px 0;
+}
+
+}

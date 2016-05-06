@@ -1,0 +1,18 @@
+<div id="top">
+    <div class="flexslider fs2">
+        <ul class="slides">
+          <?php
+          foreach($sql_data as $atop8){
+          ?>
+          <?php if(  !empty($atop8->image) AND File::exists( public_path().$atop8->image)  ): ?>
+            <li><a href="<?php echo $atop8->url; ?>" target="_new" >
+                <img src="/public<?php echo $atop8->image; ?>" >
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php
+          }
+          ?>
+        </ul>
+    </div>
+</div>

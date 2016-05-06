@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+#main .title{
+	background: url(../../img/2/fur/b1.png) left 10% bottom no-repeat , #EEE;
+	padding: 50px 0;
+	text-align: center;
+}
+.title p{	
+	font-size: 18px;
+}
+.title span{
+	color: #BBB;
+	font-size: 10px;
+}
+
+#main .flexslider img{
+	margin: 10px auto;
+	width: 80%;
+}
+.flexslider{
+	margin: 0;
+	border: 0;
+}
+.flexslider ol{
+	display: none;
+}
+.flex-direction-nav a:before{
+	color: rgba(255,255,255,0.7);
+	text-shadow: 3px 3px #999;
+}
+.flex-direction-nav a{
+	top: 35%;
+}
+
+.detail{
+	background: url(../../img/2/fur/grass.jpg) no-repeat;
+	background-size: cover;
+
+	padding: 50px 0;
+	color: #FFF;
+}
+.detail .content{
+	margin: 0 auto;
+	width: 350px;
+}
+.detail ul , .detail .square{
+	float: left;
+	width: 50%;
+}
+.detail li{
+	list-style-type: none;
+	margin: 10px 0;
+}
+.detail li:before{
+	display: inline-block;
+	content: '';
+	background: #ec6941;
+	margin: 3px 10px;
+	width: 5px; height: 5px;
+}
+.detail .square{
+	font-size: 0;
+}
+.detail .square p{
+	margin: 9px 0;
+	font-weight: bold;
+	font-size: 18px;
+}
+.detail .square span:nth-child(2){
+	background-color: #000;
+	padding: 3px 20px;
+	font-size: 16px;
+}
+.detail .square span:nth-child(3){
+	background-color: rgb(243,152,0);
+	padding: 3px 20px;
+	font-size: 16px;
+}
+
+
+@media (max-width: 768px){
+
+#main .title{
+	background: #EEE;
+}
+
+}
+
+@media (max-width: 480px){
+
+.detail .content{
+	width: 200px;
+}
+.detail ul , .detail .square{
+	float: left;
+	width: 100%;
+}
+.detail .square{
+	margin-left: 25px;
+}
+
+.flex-direction-nav a{
+	top: 28%;
+}
+
+}

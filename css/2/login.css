@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+#main{
+	background: url(../../img/2/cons/b3.png) right 20% bottom no-repeat , url(../../img/2/cons/bg.jpg) no-repeat;
+	background-size: 57px , cover;
+	padding: 70px 0 120px;
+	text-align: center;
+}
+
+form{
+	margin: 0 auto;
+	width: 200px;
+}
+input[type="text"]{
+	display: block;
+	width: 200px; height: 40px;
+	text-indent: 30px;
+}
+#acc{
+	background: url(../../img/2/cons/icon1.png) 10px no-repeat , #FFF;
+	background-size: auto 20px;
+	border-radius: 5px 5px 0 0;
+	border: 1px solid #EEE;
+}
+#pw{
+	background: url(../../img/2/cons/icon2.png) 10px no-repeat , #FFF;
+	background-size: auto 20px;
+	border-radius: 0 0 5px 5px;
+	border: 1px solid #EEE;
+}
+input[type="checkbox"]{
+	float: left;
+	margin: 14px 5px;
+}
+form span{
+	float: left;
+	margin: 10px 0;
+	color: #FFF;
+}
+input[type="submit"]{
+	float: right;
+	background-color: #ec6941;
+	margin: 10px 0;
+	padding: 5px 10px;
+	border-radius: 3px;
+	border: none;
+	color: #FFF;
+	cursor: pointer;
+}

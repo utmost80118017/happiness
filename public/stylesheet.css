@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,600,600italic,700,700italic,300italic);
+
+@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+
+#bg{
+	background: url(img/bg.jpg) 30% bottom no-repeat;
+	background-size: cover;
+}
+
+.inbox{
+	height: 100vh;
+	background-image: url(img/slide1.jpg);
+	-moz-background-size: cover;/*for Firefox*/
+    -webkit-background-size: cover;/*for Google Chrome、Safari*/
+    -o-background-size: cover;/*for Opera*/
+    background-size: cover;/*for IE*/
+    background-position: center top;
+}
+
+#BackToTop{
+	display: none;
+	position: fixed;
+	z-index: 5;
+	bottom: 5%; right: 5%;
+	background: rgba(200,200,200,.4);
+
+	border-radius: 20px;
+	width: 40px; height: 40px;
+
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	line-height: 30px;
+}
+#BackToTop:hover{
+	background: rgba(200,200,200,.6);
+}
+
+.logo{
+	max-width:100%;
+	margin: 0 auto;
+	padding: 20px 0;
+	text-align:center;
+	background-color:hsla(0, 0%, 0%, 0.5);	
+}
+.logo img{
+	cursor: pointer;
+}
+
+.project{
+	height: 100%;
+	-moz-background-size: cover;/*for Firefox*/
+    -webkit-background-size: cover;/*for Google Chrome、Safari*/
+    -o-background-size: cover;/*for Opera*/
+    background-size: cover;/*for IE*/
+    background-position: left center;
+}
+
+.project_in{
+	max-width:1000px;
+	margin:0 auto;
+}
+
+.project_box1{
+	width:50%;
+	float:right;
+}
+
+.project_box1  img , .project_box2 img{
+	width:100%;
+}
+
+.project_box2{
+	width:50%;
+	float:right;
+}
+
+.Group a{
+	color: #000;
+}
+.Group p , h3 , h4{
+	margin: 25px auto;
+	min-width: 580px; max-width: 40%;
+	line-height: 25px;
+	letter-spacing: 1px;
+}
+.Group p{
+	padding-bottom: 3px;
+	border-bottom: 1px dashed #999;
+}
+.Group p span{
+	margin: 0 4px;
+	padding: 0 2px;
+}
+p span.projectNews{
+	background: rgb(89,73,63);
+	padding: 0 8px;
+	color: #FFF;
+}
+p span.infoNews{
+	background: rgb(209,192,165);
+	padding: 0 8px;
+	color: #333;
+}
+p span.indexNews{
+	background: #963;
+	padding: 0 8px;
+	color: #FFF;
+}
+p span.financialNews{
+	background: rgb(106,57,6);
+	padding: 0 8px;
+	color: #FFF;
+}
+
+.brand{
+	min-height: 400px;
+	-moz-background-size: cover;/*for Firefox*/
+    -webkit-background-size: cover;/*for Google Chrome、Safari*/
+    -o-background-size: cover;/*for Opera*/
+    background-size: cover;/*for IE*/
+    background-position: top center;
+}
+
+.word_t{
+	margin: 0 auto;
+	padding: 50px 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.word_t2{
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: center;
+}
+
+.word_w{
+	margin:0 auto;
+	color:#000;
+	text-align: center;
+	padding:10px 0 30px 0;
+	line-height:30px;
+}
+
+.word_bt{
+	margin:0 auto;
+	text-align: center;
+	padding:10px 0;
+}
+
+.word_bt2{
+	margin:0 auto;
+	text-align: center;
+	padding:10px 0;
+}
+
+.brand_word{
+	max-width: 600px;
+	margin:0 auto;
+	text-align:center;
+	padding:50px 20px;
+}
+
+
+.collections{
+	width:100%;
+	min-height: 780px;
+	background-image: url(img/bg4.jpg);
+	-moz-background-size: cover;/*for Firefox*/
+    -webkit-background-size: cover;/*for Google Chrome、Safari*/
+    -o-background-size: cover;/*for Opera*/
+    background-size: cover;/*for IE*/
+    background-position: top center;
+}
+
+.col_box{
+	width: 100%;
+	padding-top:30px;
+	margin:0 auto;
+}
+
+#slideshow{
+	overflow: hidden;
+	position: relative;
+}
+
+.pic_in{
+	position: relative;
+	width: 1920px;
+}
+
+.pic_in li{
+	list-style: none;
+	display: table-cell;
+	height: 320px;
+	font-size: 0;
+}
+img#slide2More{
+	position: absolute;
+	bottom: 0; right: 0;
+}
+
+.pic_box{
+	height:320px;
+	float:left;
+}
+
+.pic_box > img{
+	width:100%;
+}
+
+@media (max-width: 980px){
+
+#bg{
+	background: url(img/bgMobile.jpg);
+	background-size: auto 100%;
+}
+.news{
+	background: rgba(255,255,255,.5);
+	min-height: 400px;
+}
+
+}
+@media (max-width: 768px){
+
+#bg{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.Group p{
+	width: 100%; min-width: 0; max-width: 100%;
+	text-align: center;
+}
+.Group p span:last-child{
+	display: block;
+}
+
+}
+
+@media (max-width: 700px){
+
+.project_box1 , .project_box2{
+	float: none;
+	margin: 3% auto;
+	width: 90%;
+}
+
+}
+@media (max-width: 480px){
+
+.Group p{
+	width: 90%;
+	text-align: left;
+}
+.pic_in a:last-child img{
+	left: calc(50% - 240px);
+}
+
+}

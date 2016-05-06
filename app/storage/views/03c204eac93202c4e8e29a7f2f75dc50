@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#'>
+<head>
+	<meta charset="UTF-8">
+	<title>米築</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<meta property="og:title" content="米築首頁"></meta>
+	<meta property="og:type" content="米築首頁"></meta>
+	<meta property="og:url" content="<?php echo Request::url(); ?>"></meta>
+	<meta property="og:description" content="<?php echo ms_str($one_news->content,500); ?>"></meta>
+	<meta property="og:site_name" content="米築"></meta>
+	<meta name="description" content="<?php echo ms_str($one_news->content,500); ?>" />
+
+	<?php foreach($rate_ads as $rate_ad): ?>
+			<?php
+				$r_img = getRateImage($rate_ad->id,'noGoogleList');
+			?>
+
+			<?php if(  !empty($r_img->image) AND File::exists( public_path().$r_img->image)  ): ?>
+				<meta property="og:image" src="/public<?php echo $r_img->image; ?>"></meta>
+			<?php endif; ?>
+	<?php endforeach; ?>
+
+
+    <link rel="stylesheet" type="text/css" href="/css/slick/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.flexslider-min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/Crawler.js"></script>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/index.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+
+	<nav>
+				<section class="clearfix">
+						<div id="logo"><a href="/index"><img src="/images/index/logo.png"></a></div>
+						<div id="slogan">
+								<img src="/images/index/slogan.png">
+								<img src="/images/index/fb_icon.png">
+								<div>
+									<form method="post" action="/search">
+	                    <input type="text" name="name" placeholder="SEARCH" />
+	                    <img src="/images/search_icon.png">
+	                </form>
+
+
+								</div>
+						</div>
+				</section>
+				<div>
+						<ul>
+								<li><a href="/news"><p>NEWS</p><span>地產動態</span></a></li>
+								<li><a href="/case"><p>CASE</p><span>新案訊息</span></a></li>
+								<li><a href="/deco"><p>DECO</p><span>生活美學</span></a></li>
+								<li><a href="/people"><p>PEOPLE</p><span>人物觀點</span></a></li>
+								<li><a href="/about"><p>ABOUT</p><span>關於米築</span></a></li>
+						</ul>
+				</div>
+		</nav>
+
+
+    <img id="toTop" src="images/toTop.png">
+
+    <div id="main">
+
+        <div class="flex">
+            <div class="flexslider fs1">
+                <ul class="slides">
+										<?php foreach ($ad_14 as $row14): ?>
+											<li>
+												<?php if(  !empty($row14->image) AND File::exists( public_path().$row14->image)  ): ?>
+													<a href="<?php echo $row14->url; ?>"   target="_new" >
+														<img src="/public<?php echo $row14->image; ?>" />
+													</a>
+												<?php else: ?>
+														<img src="/images/798x422.jpg"  />
+												<?php endif; ?>
+											</li>
+										<?php endforeach; ?>
+
+                </ul>
+            </div>
+
+            <div class="viewmore" style="display:none;" ><img src="images/index/viewmore.png" style="display:none;"></div>
+        </div>
+
+				<?php echo $__env->make("frontend.comm.row-marquee",array("m"=>"m" , "c_sql"=>$ad_8), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    </div>
+
+    <?php echo $__env->make("frontend.comm.middle", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div id="news">
+        <div class="content clearfix">
+            <img src="images/index/news_bg2.jpg">
+            <p class="summary">
+                <span class="EN">NEWS</span>
+                <span class="CH"> / 地產動態  </span>
+								<br>
+								<span class="summaryTitle" > <?php echo $one_news->name; ?></span>
+                <span class="text">
+									<?php echo ms_str($one_news->content,300); ?>
+
+								</span>
+                <a href="/news2/<?php echo $one_news->id; ?>"><span class="link">MORE</span></a>
+            </p>
+            <div>
+
+
+
+							<?php if( !empty($one_news->image) AND File::exists(public_path().$one_news->image) ): ?>
+								<img src="/public<?php echo $one_news->image; ?>">
+							<?php else: ?>
+								<img src="images/index/news1.jpg">
+							<?php endif; ?>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+		<?php echo $__env->make("frontend.comm.row-marquee",array("m"=>"m2" , "c_sql"=>$ad_8), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div id="case">
+        <div class="select">
+            <img class="left" src="images/index/case_arrowL.png">
+            <img class="right" src="images/index/case_arrowR.png">
+            <div class="slick4">
+                		<div class="area" id="" >
+											<a href="/case">
+												<p>全部區域</p><p>ALL</p>
+											</a>
+										</div>
+
+										<?php foreach($areas as $area): ?>
+										<div class="area" id="<?php echo $area->id; ?>">
+												<a href="/case?taiwanArea=<?php echo $area->id; ?>">
+													<p><?php echo $area->name; ?></p>
+													<p><?php echo $area->title; ?></p>
+												</a>
+										</div>
+										<?php endforeach; ?>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="slick">
+
+
+						<?php foreach($rate_ads as $rate_ad): ?>
+            <div class="slick2">
+								<?php
+									$r_img = getRateImage($rate_ad->id,'noAd');
+								?>
+								<?php if(  !empty($r_img->image) AND File::exists( public_path().$r_img->image)  ): ?>
+                	<img src="/public<?php echo $r_img->image; ?>"  >
+								<?php else: ?>
+
+								<?php endif; ?>
+
+                <div class="detail">
+                    	<img src="images/index/case_close.png">
+											<?php echo $rate_ad->name; ?>
+
+                    	<?php echo rate_info($rate_ad); ?>
+
+                </div>
+            </div>
+						<?php endforeach; ?>
+
+
+
+
+
+        </div>
+
+        <button id="prev"></button>
+        <button id="next"></button>
+
+        <p class="summary">
+            <span class="EN">CASE</span>
+            <span class="CH"> /新案訊息</span>
+            <a href="/case"><span class="link">MORE</span></a>
+        </p>
+    </div>
+
+
+		<?php echo $__env->make("frontend.comm.row-marquee",array("m"=>"m3" , "c_sql"=>$ad_8), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<section id="deco">
+        <div class="flexslider fs1">
+            <ul class="slides">
+
+								<?php foreach($deco_ads as $deco): ?>
+		                <li>
+												<?php if(  !empty($deco->image) AND File::exists( public_path().$deco->image)  ): ?>
+													<img src="/public<?php echo $deco->image; ?>" />
+												<?php else: ?>
+		                    	<img src="images/index/deco1.jpg" />
+												<?php endif; ?>
+		                    <p class="summary">
+		                        <span class="EN">DECO</span>
+		                        <span class="CH"> / 生活美學 </span>
+														<br>
+														<span class="summaryTitle" >  <?php echo $deco->name; ?></span>
+		                        <span class="text"><?php echo ms_str($deco->content,300); ?></span>
+		                        <a href="/deco2/<?php echo $deco->id; ?>"><span class="link">MORE</span></a>
+		                    </p>
+		                </li>
+								<?php endforeach; ?>
+            </ul>
+        </div>
+        <!-- <p class="summary">
+            <span class="EN">DECO</span>
+            <span class="CH"> / 生活美學</span>
+            <span class="text">ETABS是由CSI公司開發研製的房屋建築結構分析與設計軟體，ETABS已有近三十年的發展歷史....</span>
+            <a href="deco.html"><span class="link">MORE</span></a>
+        </p> -->
+    </section>
+
+  <section class="row-ad">
+									<?php
+									$ad23_1 = AD::where("category_id",23)->orderByRaw("RAND()")->first();
+									?>
+									<?php if(  !empty($ad23_1->image) AND File::exists( public_path().$ad23_1->image)  ): ?>
+											<a href="<?php echo $ad23_1->url; ?>" target="_new">
+		                    <img src="/public<?php echo $ad23_1->image; ?>"   />
+											</a>
+									<?php endif; ?>
+		</section>
+
+    <section id="people" class="clearfix">
+        <p class="summary">
+            <span class="EN">PEOPLE</span>
+            <span class="CH"> / 人物觀點  </span>
+						<br>
+						<span class="summaryTitle" > <?php echo $people->name; ?></span>
+            <span class="text">
+							<?php
+							$pd=explode("<p>",$people->content);
+							$pd=explode("</p>",$pd[1]);
+							echo $pd[0];
+							?>
+						</span>
+            <a href="/people2/<?php echo $people->id; ?>"><span class="link">MORE</span></a>
+        </p>
+
+        <div >
+						<?php if(  !empty($people->image) AND File::exists( public_path().$people->image)  ): ?>
+            	<img src="/public<?php echo $people->image; ?>">
+						<?php endif; ?>
+
+
+
+        </div>
+    </section>
+
+		<section class="row-ad">
+								<?php
+								$ad23_2 = AD::where("category_id",23)->orderByRaw("RAND()")->first();
+								?>
+								<?php if(  !empty($ad23_2->image) AND File::exists( public_path().$ad23_2->image)  ): ?>
+									<a href="<?php echo $ad23_2->url; ?>"  target="_new" >
+                  		<img src="/public<?php echo $ad23_2->image; ?>"/>
+									</a>
+								<?php endif; ?>
+			</section>
+
+
+		<div id="about" class="clearfix">
+        <div><img src="images/index/about_bg2.png"></div>
+        <p class="summary">
+            <span class="EN">ABOUT US</span>
+            <span class="CH"> / 關於米築</span>
+            <span class="text">ETABS是由CSI公司開發研製的房屋建築結構分析與設計軟體ETABS已有近三十年的發展歷史，是由美國乃至全球公認的高層結構計算程式，在世界範圍內廣泛應用，是房屋建築結構分析與設計軟體的業界標準。「美麗華。仁愛」主結構體耐震係數已高達0.33g經制震配置其耐震能力約提昇20%整體耐震係數提高皮國家最高標準0.33g以上。</span>
+            <a href="/about"><span class="link">MORE</span></a>
+        </p>
+    </div>
+
+    <?php echo $__env->make("frontend.comm.footer", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+</div>
+
+
+<script type="text/javascript">
+$("document").ready(function(){
+		// $(".area").click(function(){
+		//
+		// 		if(  $(this).attr("id") != "undefined" ){
+		//
+		// 				// alert( $(this).attr("id") );
+		// 		}
+		//
+		// });
+});
+
+</script>
+</body>
+</html>

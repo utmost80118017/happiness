@@ -1,0 +1,8 @@
+<div class="header">
+    <h1 class="page-title"><?php echo $_title["top"]; ?></h1>
+</div>
+
+<ul class="breadcrumb">
+    <li><a href="/users"><?php echo $_title["main"]; ?></a> <span class="divider">/</span></li>
+    <li class="active"><?php echo $_title["sub"]; ?></li>
+</ul>

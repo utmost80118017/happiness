@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#'>
+<head>
+ <meta charset="UTF-8">
+ <title>米築</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css">
+		<link rel="stylesheet" type="text/css" href="/css/news.css">
+		<link rel="stylesheet" type="text/css" href="/css/deco.css">
+
+		<script src="/js/jquery.js"></script>
+    <script src="/js/jquery.flexslider-min.js"></script>
+		<script src="/js/Crawler.js"></script>
+		<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+		<script src="/js/script.js"></script>
+
+</head>
+<body>
+<div id="container">
+    <?php echo $__env->make("frontend.comm.top", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<?php echo $__env->make("frontend.comm.top_ad",array("sql_data"=>$ad_22), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<img id="toTop" src="/images/toTop.png">
+
+		<?php echo $__env->make("frontend.comm.row-marquee",array("m"=>"m3" , "c_sql"=>$ad_8), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div id="main" class="clearfix">
+				<section>
+						<p>DECO</p>
+						<span>生活美學</span>
+
+						<div style="">
+								<?php
+                $deco_types=DB::table("decos")->groupBy("type")->get();
+                ?>
+                  <?php foreach($deco_types as $type): ?>
+                      <?php if(!empty($type->type)): ?>
+                      <select>
+  										    <option><?php echo $type->type; ?></option>
+                      </select>
+                      <?php endif; ?>
+                  <?php endforeach; ?>
+						</div>
+
+				</section>
+
+
+        <?php echo $__env->make("frontend.comm.straight", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				<?php
+				$backgound_pics = array(1=>"/images/deco/1.jpg",
+																2=>"/images/deco/2.jpg",
+																3=>"/images/deco/3.jpg",
+																4=>"/images/deco/4.jpg",
+																5=>"/images/deco/5.jpg");
+				$i=1;
+				?>
+				<article>
+
+					<div class="ad">
+            <?php
+
+            ?>
+						<?php foreach($decos as $deco): ?>
+						<div class="deco">
+                <?php if(  !empty($deco->image) AND File::exists( public_path().$deco->image)  ): ?>
+                  <img src="/public<?php echo $deco->image; ?>" />
+                <?php else: ?>
+                  <img src="<?php echo $backgound_pics[$i]; ?>">
+                <?php endif; ?>
+
+								<div class="center c<?php echo ($i%2)+1;?>">
+										<p><?php echo $deco->name; ?></p>
+										<a href="/deco2/<?php echo $deco->id; ?>"><span>MORE</span></a>
+								</div>
+						</div>
+						<?php $i++;?>
+						<?php endforeach; ?>
+
+
+
+
+
+						<p id="page">
+							<?php echo with(new CustomPresenter($decos))->render(); ?>
+						</p>
+				</article>
+		</div>
+
+		<?php echo $__env->make("frontend.comm.footer", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <style media="screen">
+      .sel{
+        background-color: rgb(54,46,43);
+        margin: 30px 10px 0;
+        padding: 5px 15px;
+        color: #FFF;
+        cursor: pointer;
+      }
+    </style>
+</div>
+</body>
+</html>

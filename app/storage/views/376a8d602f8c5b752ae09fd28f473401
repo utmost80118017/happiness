@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#'>
+<head>
+	<meta charset="UTF-8">
+	<title>米築</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="<?php echo $cases[0]->title; ?>"></meta>
+	<meta property="og:type" content="房屋"></meta>
+	<meta property="og:url" content="<?php echo Request::url(); ?>"></meta>
+	<meta property="og:site_name" content="米築"></meta>
+	<meta property="og:description" content="<?php echo ms_str($cases[0]->content,200); ?>"></meta>
+	<?php
+		$o_img = getRateImageType($cases[0]->id,'setList');
+	?>
+	<?php if(  !empty($o_img->image) AND File::exists( public_path().$o_img->image)  ): ?>
+		<meta property="og:image" src="/public<?php echo $o_img->image; ?>"></meta>
+	<?php endif; ?>
+
+
+	<link rel="stylesheet" type="text/css" href="/css/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="/css/default.css">
+	<link rel="stylesheet" type="text/css" href="/css/case.css">
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/Crawler.js"></script>
+	<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+	<script src="/js/script.js"></script>
+
+</head>
+
+<body>
+<div id="container">
+	<?php echo $__env->make("frontend.comm.top", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <?php echo $__env->make("frontend.comm.top_ad",array("sql_data"=>$ad_12), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <img id="toTop" src="images/toTop.png">
+
+		<?php echo $__env->make("frontend.comm.row-marquee",array("m"=>"m3" , "c_sql"=>$ad_8), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <section id="map">
+        <p>CASE</p>
+        <span>新案訊息</span>
+
+        <div class="googlemap">
+
+            <!--
+						<img src="images/case/map.jpg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.596754221171!2d121.51487121540943!3d25.047755343893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9727e338539%3A0xfbb9a2495d822933!2sTaipei+Railway+Station!5e0!3m2!1sja!2sjp!4v1459411689656" frameborder="0" style="border:0" allowfullscreen></iframe>
+						 -->
+            <img src="images/case/map.jpg">
+        </div>
+
+        <div class="select">
+            <img class="left" src="images/index/case_arrowL.png">
+            <img class="right" src="images/index/case_arrowR.png">
+            <div class="slick3">
+                <div class="area" id="all" ><a href="/case"><p>全部區域</p><p>ALL</p></a></div>
+
+								<?php foreach($areas as $area): ?>
+								<div class="area" id="<?php echo $area->id; ?>">
+										<a href="/case?taiwanArea=<?php echo $area->id; ?>">
+											<p><?php echo $area->name; ?></p>
+											<p><?php echo $area->title; ?></p>
+										</a>
+								</div>
+								<?php endforeach; ?>
+
+
+            </div>
+        </div>
+    </section>
+
+    <article>
+			<?php
+				$i=0;
+				$ad12_1 = AD::where("category_id",23)->orderByRaw("RAND()")->take(4)->get();
+			?>
+			<?php foreach($ad12_1 as $ad12): ?>
+			<?php
+			$i++;
+			// if($i>=3){
+			?>
+
+						<?php if(  !empty($ad12->image) AND File::exists( public_path().$ad12->image)  ): ?>
+						<a href="<?php echo $ad12->url; ?>" target="_new">
+        			<img src="/public<?php echo $ad12->image; ?>" >
+						</a>
+						<?php endif; ?>
+			<?php
+		// }
+			?>
+			<?php endforeach; ?>
+    </article>
+
+
+
+
+
+
+    <aside class="clearfix">
+
+
+				<?php foreach($cases as $case): ?>
+        <div class="case">
+            <div class="casePic">
+								<a href="/case2/<?php echo $case->id; ?>"  >
+
+
+
+
+
+									<?php
+										$r_img = getRateImageType($case->id,'setList');
+									?>
+									<?php if(  !empty($r_img->image) AND File::exists( public_path().$r_img->image)  ): ?>
+	                	<img src="/public<?php echo $r_img->image; ?>"  >
+									<?php else: ?>
+										<img src="images/case/case1.jpg"  >
+									<?php endif; ?>
+
+
+
+								</a>
+						</div>
+        </div>
+				<?php endforeach; ?>
+
+        <p id="page">
+					<?php if($taiwanArea): ?>
+					<?php echo with(new CustomPresenter($cases->appends(array('taiwanArea' => $taiwanArea)) ))->render(); ?>
+					<?php else: ?>
+					<?php echo with(new CustomPresenter($cases))->render(); ?>
+					<?php endif; ?>
+				</p>
+    </aside>
+
+    <?php echo $__env->make("frontend.comm.footer", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+
+
+<script type="text/javascript">
+		$("document").ready(function(){
+				$(".area").click(function(){
+					location.href="?taiwanArea="+$(this).attr("id");
+				});
+		});
+</script>
+</body>
+</html>

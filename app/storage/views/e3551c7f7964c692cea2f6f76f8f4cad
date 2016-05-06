@@ -1,0 +1,15 @@
+<aside>
+    <?php foreach( $ad_10 as $a10): ?>
+        <div class="ad">
+            <a href="<?php echo $a10->url; ?>"   target="_new" >
+              <?php if(  !empty($a10->image) AND File::exists( public_path().$a10->image)  ): ?>
+                  <img src="public/<?php echo $a10->image; ?>">
+                  <p><?php echo $a10->title; ?>
+
+                  </p>
+                  <span><?php echo $a10->content; ?></span>
+              <?php endif; ?>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</aside>

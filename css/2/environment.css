@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+#container > section{
+	position: relative;
+}
+#e1{
+	background-color: #DDD;
+}
+#e3{
+	background-color: #f29b76;
+}
+#e4{
+	background-color: rgb(243,152,0);
+}
+.pic{
+	position: relative;
+	font-size: 0;
+}
+.pic img{
+	width: 100%;
+}
+
+
+.intro{
+	position: absolute;
+	top: 40%; right: 5%;
+	transform: translateY(-40%);
+	-webkit-transform: translateY(-40%);
+	background: url(../../img/2/env/circle.png) no-repeat;
+	background-size: 100%;
+
+	width: 200px;
+	padding: 70px 25px;
+	text-align: center;
+}
+.intro p{
+	margin: 10px 0;
+	color: #fdf802;
+	font-size: 18px;
+}
+.intro span{
+	display: block;
+	margin: 10px 0;
+	color: #FFF;
+}
+section > p img{
+	position: relative;
+	margin: 30px 130px;
+	margin-top: -40px;
+}
+
+.flexslider{
+	margin: 0;
+	border: none;
+}
+.flex-direction-nav{
+	display: none;
+}
+.flex-control-nav{
+	bottom: 10px;
+}
+.flex-control-paging li a{
+	background: #FFF;
+	width: 9px; height: 9px;
+	border-radius: 7px;
+	border: 2px solid #FFF;
+}
+.flex-control-paging li a:hover{
+	opacity: 0.5;
+	background-color: #ec6941;
+}
+.flex-control-paging li a.flex-active{
+	background-color: #ec6941;
+	width: 9px; height: 9px;
+	border-radius: 7px;
+	border: 2px solid #FFF;
+}
+
+
+@media (max-width: 768px){
+
+#e1,#e3{
+	background-color: #000;
+}
+#e2,#e4{
+	background-color: #5b5b5b;
+}
+.intro{
+	position: static;
+	transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    background: none;
+    margin: 30px auto;
+    padding: 0;
+}
+section > p{
+	height: 0;
+}
+section > p img{
+	top: -90px;
+	margin: 0 25px;
+	width: 45px;
+}
+
+}

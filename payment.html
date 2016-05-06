@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>幸福時光</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/css/2/default2.css">
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/wow.min.js"></script>
+
+	<script src="/js/script2.js"></script>
+
+	<style type="text/css">
+
+	#main{
+		background: url(img/2/pay/bg.png) right top no-repeat , url(img/2/pay/i2.png) left bottom no-repeat;
+		background-size: 30% , 150px;
+		padding: 5% 5% 0;
+	}
+	#main .pic{
+		font-size: 0;
+	}
+	#main .pic img{
+		width: 100%;
+	}
+
+	#main2{
+		background: url(img/2/pay/i3.png) right 10% bottom no-repeat;
+		border-right: 5px solid rgb(243,152,0);
+		padding-bottom: 150px;
+	}
+	.title{
+		padding: 20px 0;
+		color: #FFF;
+		font-size: 0;
+		text-align: center;
+	}
+	.title img{
+		margin: 0 10px;
+		vertical-align: top;
+	}
+	.title span:nth-child(2){
+		display: inline-block;
+		background-color: #ec6941;
+		margin-top: 25px;
+		padding: 5px 10px;
+		font-size: 16px;
+	}
+	.title span:nth-child(3){
+		display: inline-block;
+		background-color: #000;
+		padding: 5px 10px;
+		font-size: 16px;
+	}
+	#main2 > img{
+		display: block;
+		margin: 30px auto;
+		width: 90%; max-width: 700px;
+	}
+
+	@media (max-width: 480px){
+
+	.title img{
+		display: none;
+	}
+
+	}
+
+
+	</style>
+</head>
+<body>
+	<nav>
+		<div>
+			<img src="img/2/menu.png">
+			<ul>
+				<li><a href="environment.html">環境特色</a></li>
+				<li><a href="material.html">建材特色</a></li>
+				<li><a href="plan.html">規劃特色</a></li>
+				<li><a href="security.html">安全特色</a></li>
+				<li><a href="furniture.html">傢配</a></li>
+				<li><a href="payment.html">付款方式</a></li>
+				<li><a href="/construction">施工進度</a></li>
+			</ul>
+			<img src="img/2/index/i1.png">
+		</div>
+	</nav>
+	<p class="menu2"><img src="img/2/menu2.png"></p>
+
+<div id="container">
+
+	<div id="top">
+		<img src="img/2/pay/top.jpg">
+		<a href="index2.html"><img class="logo" src="img/2/logo2.png"></a>
+		<p><span>付款方式</span></p>
+	</div>
+
+
+	<div id="main">
+		<div class="pic"><img src="img/2/pay/main.jpg"></div>
+
+		<div id="main2">
+			<div class="title">
+				<img src="img/2/pay/i1.png">
+				<span class="wow fadeInUp">保證月付2萬</span>
+				<span class="wow fadeInUp">3年自備222萬</span>
+			</div>
+
+			<img id="pay1" src="img/2/pay/pay1.jpg">
+			<img id="pay2" src="img/2/pay/pay2.png">
+		</div>
+	</div>
+
+	<img id="toTop" src="img/2/toTop.jpg">
+	<footer>
+		<img src="img/2/footer.png">
+		<p>Copyright © HAPPINESS TIME CONSTRUCTION ENTERPRISE CO., LTD. All Rights Reserved‧</p>
+		<div>
+			<a href="index1.html"><img src="img/2/index1.png"></a>
+			<a href="index2.html"><img src="img/2/index2.png"></a>
+			<a href="index.html"><img src="img/2/home.png"></a>
+		</div>
+	</footer>
+
+</div>
+<script type="text/javascript">
+	$("document").ready(function(){
+
+			// alert('aa');;
+			//換圖jQuery
+			$.get("/ajax_pay",function(data){
+				// alert(data);
+					var obj = jQuery.parseJSON( data );
+					//
+					// alert(obj.ig)
+					// alert(obj.ig2)
+
+					if (obj.ig) {
+						$("#pay1").attr("src","/public"+obj.ig);//pay1
+					}
+
+					if (obj.ig2) {
+						$("#pay2").attr("src","/public"+obj.ig2);//pay1
+					}
+
+
+			});
+
+	});
+</script>
+
+</body>
+</html>

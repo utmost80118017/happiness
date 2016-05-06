@@ -1,0 +1,65 @@
+<?php $__env->startSection('content'); ?>
+<script src="/ckeditor/ckeditor.js"></script>
+
+
+
+
+      <?php echo $__env->make("layout.comm.head", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+<?php echo Form::open(array('action' => 'DecoController@decoStore' ,"id"=>"tab","enctype"=>"multipart/form-data")); ?>
+
+<div class="btn-toolbar">
+
+    <input type="submit" class="btn btn-primary"><i class="icon-save"></i> Save</button>
+
+  <div class="btn-group">
+  </div>
+</div>
+
+<div class="well">
+
+    <div id="myTabContent" class="tab-content">
+      <?php echo $__env->make("admin.deco.form", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo Form::close(); ?>
+
+
+
+
+  </div>
+
+</div>
+
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Delete Confirmation</h3>
+  </div>
+
+  <div class="modal-body">
+    <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+  </div>
+</div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+<script type="text/javascript">
+         CKEDITOR.replace("content",      {            width:"auto", height:555      });
+</script>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
